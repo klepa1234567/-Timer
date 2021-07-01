@@ -10,10 +10,12 @@ module.exports = {
         filename: 'bundle.js',
         path: path.join(__dirname, 'dist')
     },
-
+    resolve: {
+        extensions: ['.js', '.jsx', '.json']
+    },
     module: {
         rules: [{
-            test: /\.js$/,
+            test: /\.jsx?$/,
             use: ['babel-loader']
         },
         {
