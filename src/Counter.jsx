@@ -1,48 +1,35 @@
 import React,{Component} from 'react';
 
-class Counter extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            counter: 0,
-        }
-        this.decrement = this.decrement.bind(this)
+const RED = '#f00';
+const GREEN = '#0f0';
+const BLUE = '#00f';
 
+class Colors extends Component{
+    setBodyColor = color => {
+        document.body.style.backgroundColor = color;
     }
-    decrement(){
-        this.setState({
-            counter: this.state.counter -1,
-        })
-    };
-    increment = () => {
-            this.setState({
-                counter: this.state.counter +1,
-        });
-    };
-    reset(){
-        this.setState({
-            counter:0,
-        });
-    };
-
     render() {
         return (
-            <div className="counter" >
-                <button className="counter_button" onClick={this.decrement}>
-                    -
-                </button>
-                <span className="counter_value" onClick={() => this.reset()}>
-                    {this.state.counter}
-                </span>
-                <button className="counter_button" onClick={this.increment}>
-                    +
-                </button>
+            <div className="colors">
+                <button
+                    style={{backgroundColor: RED,}}
+                    onClick={this.setBodyColor.bind(this, RED)}
+                    className="colors_button"
+                />
+                <button
+                    style={{backgroundColor: GREEN,}}
+                    onClick={() => this.setBodyColor(GREEN)}
+                    className="colors_button"
+                />
+                <button
+                    style={{backgroundColor: BLUE,}}
+                    onClick={() => this.setBodyColor(BLUE)}
+                    className="colors_button"
+                />
             </div>
         );
     }
-
 }
 
-
-export default Counter;
+export default Colors;
 

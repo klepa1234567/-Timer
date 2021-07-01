@@ -7,15 +7,11 @@ body{
     justify-content: center;
     height: 100%;
 }
-.counter_value{
-    margin-left: 10px;
-    margin-right: 10px;
-    color: dimgray;
-}
-.counter_button{
-    width: 30px;
-    height: 30px;
-    background: chartreuse;
-    border: 1px solid chartreuse;
+.colors_button{
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
+    border: 2px solid #fff;
 }
