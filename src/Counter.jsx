@@ -1,35 +1,13 @@
-import React,{Component} from 'react';
+import React from 'react';
+import UserGreeting from './UserGreeting';
+import GuestGreeting from './GuestGreeting';
 
-const RED = '#f00';
-const GREEN = '#0f0';
-const BLUE = '#00f';
-
-class Colors extends Component{
-    setBodyColor = color => {
-        document.body.style.backgroundColor = color;
+const Greeting = props => {
+    if(props.isLoggedIn){
+        return <UserGreeting />;
     }
-    render() {
-        return (
-            <div className="colors">
-                <button
-                    style={{backgroundColor: RED,}}
-                    onClick={this.setBodyColor.bind(this, RED)}
-                    className="colors_button"
-                />
-                <button
-                    style={{backgroundColor: GREEN,}}
-                    onClick={() => this.setBodyColor(GREEN)}
-                    className="colors_button"
-                />
-                <button
-                    style={{backgroundColor: BLUE,}}
-                    onClick={() => this.setBodyColor(BLUE)}
-                    className="colors_button"
-                />
-            </div>
-        );
-    }
-}
+    return <GuestGreeting />;
+};
 
-export default Colors;
+export default Greeting;
 
